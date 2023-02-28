@@ -9,14 +9,14 @@ const NoticeDetailWrite = () => {
     const titleRef = useRef();
     const editorRef = createRef();
     const navigate = useNavigate();
-    const onClickModifyFinish = (e) => {
+    const onClickModifyFinish = () => {
         console.log('작성 완료');
         alert('공지사항 작성이 완료 되었습니다');
         console.log(titleRef.current.value);
         console.log(editorRef.current.getInstance().getHTML());
         // navigate('/notice');
     };
-    const onClickModifyCancel = (e) => {
+    const onClickModifyCancel = () => {
         console.log('작성 취소');
         alert('공지사항 작성이 취소 되었습니다');
         navigate('/notice');
@@ -30,20 +30,6 @@ const NoticeDetailWrite = () => {
                             <InputLabel>제목</InputLabel>
                             <TextField variant="standard" inputRef={titleRef} fullWidth></TextField>
                         </Grid>
-                    </Grid>
-                </Grid>
-                <Divider sx={{ background: 'primary.main', borderBottomWidth: 3, my: 2 }} />
-                <Grid container>
-                    <Grid item xs={9}>
-                        <Stack direction="row" spacing={2}>
-                            <Typography>첨부</Typography>
-                        </Stack>
-                    </Grid>
-                    <Grid item xs={3} align="end">
-                        <Button variant="contained" component="label">
-                            업로드
-                            <input hidden accept="image/*" multiple type="file" />
-                        </Button>
                     </Grid>
                 </Grid>
                 <Divider sx={{ background: 'primary.main', borderBottomWidth: 3, my: 2 }} />

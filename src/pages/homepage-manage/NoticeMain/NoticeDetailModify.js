@@ -8,12 +8,12 @@ import AttachmentTag from './AttachmentTag';
 const NoticeDetailModify = () => {
     const editorRef = createRef();
     const titleRef = useRef();
-    const postData = ` 
+    const postData = `
 창의융합종합설계 주<em>제 제안서</em>
 
 | 작품 명칭 | 금오공대 자물쇠 |
 | ----- | -------- |
-| 개발기간 | 2022년 09월 01일 ～ 2022년 11월 30일 |
+| 개발기간 | 2022년 09월 01일 ~ 2022년 11월 30일 |
 | 책 임 자 | 성 명 | 성세경 |
 | 학 년 | 3 | 학 번 | 20180578 |
 | 연락처 | E-mail | tprud0997@naver.com |
@@ -34,14 +34,14 @@ const NoticeDetailModify = () => {
         view: 5
     };
     const navigate = useNavigate();
-    const onClickModifyFinish = (e) => {
+    const onClickModifyFinish = () => {
         console.log('수정 완료');
         console.log(titleRef.current.value);
         console.log(editorRef.current.getInstance().getHTML());
         alert('공지사항 수정이 완료 되었습니다');
         // navigate(`/notice/${params.detail}`);
     };
-    const onClickModifyCancel = (e) => {
+    const onClickModifyCancel = () => {
         console.log('수정 취소');
         alert('공지사항 수정이 취소 되었습니다');
         navigate(`/notice/${params.detail}`);
